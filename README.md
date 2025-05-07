@@ -3,7 +3,7 @@
 A simple, lightweight, dependency-free **Date & Time Picker** built in vanilla JavaScript and CSS.  
 Designed to be **easy to use**, **highly customizable**, and **visually clean**, it replaces the default browser UI with a modern, consistent picker experience. View a demo of how it works <a href="https://thhamiltonsmith.github.io/easy-datetime-picker/demo/">here.</a>
 
----
+<img src="/demo/Demo.png" alt="Demo of the Date Picker>">
 
 ## Why This Picker?
 
