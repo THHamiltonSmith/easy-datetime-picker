@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-Picker Demo</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../src/date-picker.css" />
+    <link rel="stylesheet" href="demo.css" />
+
+    <!-- JS -->
+    <script src="date-picker.js" defer></script>
+    <script src="../src/index.js" defer></script>
+</head>
+<body>
+
+    <main class="index-main">
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1>Date & Time Picker Demo</h1>
+            <p>Lightweight, dependency-free — plug in as many pickers as you like.</p>
+        </section>
+
+        <!-- Picker Grid -->
+        <section class="picker-showcase">
+            <!-- Basic Pickers -->
+            <div class="picker-panel">
+                <h2>Basic Pickers</h2>
+                <div class="demo-grid">
+
+                    <div class="demo-item">
+                        <h3>Future-Only Date</h3>
+                        <div class="picker-button" id="future-only" data-picker-type="date" data-days-forward="365"
+                            data-days-back="0">
+                            <span class="picker-value">Select Date</span>
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <h3>Date Defaulting to Today</h3>
+                        <div class="picker-button" id="default-today" data-picker-type="date" data-days-forward="7"
+                            data-days-back="7" data-default-today="true">
+                            <span class="picker-value">Select Date</span>
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <h3>Past-Only Date</h3>
+                        <div class="picker-button" id="past-only" data-picker-type="date" data-days-forward="0"
+                            data-days-back="30">
+                            <span class="picker-value">Select Date</span>
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <h3>Linked Date + Time (Future Only)</h3>
+                        <div class="date-range-container">
+                            <div class="picker-button" id="linked-date-1" data-picker-type="date" data-days-forward="14"
+                                data-days-back="0" data-default-today="true">
+                                <span class="picker-value">Select Date</span>
+                            </div>
+                            <div class="picker-button" id="linked-time-1" data-picker-type="time"
+                                data-time-interval="15" data-start-time="00:00" data-end-time="23:45"
+                                data-allow-past-times="false" data-linked-to="linked-date-1">
+                                <span class="picker-value">Select Time</span>
+                            </div>
+                        </div>
+                        <small>Disables past times when 'today' is selected</small>
+                    </div>
+
+                    <div class="demo-item">
+                        <h3>Linked Date + Time (Full Range)</h3>
+                        <div class="date-range-container">
+                            <div class="picker-button" id="linked-date-2" data-picker-type="date" data-days-forward="14"
+                                data-days-back="14">
+                                <span class="picker-value">Select Date</span>
+                            </div>
+                            <div class="picker-button" id="linked-time-2" data-picker-type="time"
+                                data-time-interval="15" data-start-time="00:00" data-end-time="23:45"
+                                data-allow-past-times="true" data-linked-to="linked-date-2">
+                                <span class="picker-value">Select Time</span>
+                            </div>
+                        </div>
+                        <small>Allows times for past and future dates</small>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Advanced Pickers -->
+            <div class="picker-panel">
+                <h2>Advanced Pickers</h2>
+                <div class="demo-grid">
+
+                    <div class="demo-item">
+                        <h3>Date-Range Selector</h3>
+                        <div class="date-range-container">
+                            <div class="picker-button" id="range-start" data-picker-type="date" data-days-forward="365"
+                                data-days-back="365" data-range-group="r1" data-range="start">
+                                <span class="picker-value">Start Date</span>
+                            </div>
+                            <div class="picker-button" id="range-end" data-picker-type="date" data-days-forward="365"
+                                data-days-back="365" data-range-group="r1" data-range="end">
+                                <span class="picker-value">End Date</span>
+                            </div>
+                        </div>
+                        <small>Cannot pick end before start. Highlights range.</small>
+                    </div>
+
+                    <div class="demo-item">
+                        <h3>Disable Weekends</h3>
+                        <div class="picker-button" id="disable-weekends" data-picker-type="date" data-days-forward="30"
+                            data-days-back="0" data-disable-weekends="true">
+                            <span class="picker-value">Select Date</span>
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <h3>Disable Mon & Fri</h3>
+                        <div class="picker-button" id="disable-mon-fri" data-picker-type="date" data-days-forward="14"
+                            data-days-back="14" data-disable-weekdays="1,5">
+                            <span class="picker-value">Select Date</span>
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <h3>Disallow Today</h3>
+                        <div class="picker-button" id="disallow-today" data-picker-type="date" data-days-forward="14"
+                            data-days-back="0" data-allow-today="false">
+                            <span class="picker-value">Select Date</span>
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <h3>Business Hours (30-Min Steps)</h3>
+                        <div class="picker-button" id="business-hours" data-picker-type="time" data-24hour="true"
+                            data-time-interval="30" data-start-time="08:00" data-end-time="19:00">
+                            <span class="picker-value">Select Time</span>
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <h3>5-Minute Intervals</h3>
+                        <div class="picker-button" id="five-minute" data-picker-type="time" data-time-interval="5"
+                            data-start-time="00:00" data-end-time="23:45">
+                            <span class="picker-value">Select Time</span>
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <h3>Only Future Times</h3>
+                        <div class="picker-button" id="future-only-time" data-picker-type="time" data-time-interval="15"
+                            data-allow-past-times="false" data-start-time="00:00" data-end-time="23:45">
+                            <span class="picker-value">Select Time</span>
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <h3>Start + End Times</h3>
+                        <div class="date-range-container">
+                            <div class="picker-button" id="start-time" data-picker-type="time" data-time-interval="15"
+                                data-start-time="00:00" data-end-time="23:45" data-range-group="t1" data-range="start">
+                                <span class="picker-value">Start Time</span>
+                            </div>
+                            <div class="picker-button" id="end-time" data-picker-type="time" data-time-interval="15"
+                                data-start-time="00:00" data-end-time="23:45" data-range-group="t1" data-range="end"
+                                data-linked-to="start-time">
+                                <span class="picker-value">End Time</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="picker-panel">
+                <h2>Submit Picked Date & Time</h2>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <h3>Linked Date + Time Picker</h3>
+                        <div class="date-range-container">
+                            <div class="picker-button" id="submit-date" data-picker-type="date" data-days-forward="30"
+                                data-days-back="0" data-default-today="true">
+                                <span class="picker-value">Select Date</span>
+                            </div>
+                            <div class="picker-button" id="submit-time" data-picker-type="time" data-time-interval="15"
+                                data-start-time="00:00" data-end-time="23:45" data-allow-past-times="false"
+                                data-linked-to="submit-date">
+                                <span class="picker-value">Select Time</span>
+                            </div>
+                        </div>
+                        <button class="submit-button" type="button" id="submit-datetime-btn">Submit</button>
+                        <small>This logs the selected date + time to console</small>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Shared picker dropdowns -->
+    <div id="picker-backdrop" class="picker-backdrop"></div>
+    <div id="date-picker" class="date-picker">
+        <div class="date-picker-header">
+            <div class="days-of-week">
+                <span>M</span><span>T</span><span>W</span>
+                <span>T</span><span>F</span><span>S</span><span>S</span>
+            </div>
+        </div>
+        <div id="date-picker-months" class="date-picker-months"></div>
+    </div>
+    <div id="time-picker" class="time-picker"></div>
+
+</body>
+</html>

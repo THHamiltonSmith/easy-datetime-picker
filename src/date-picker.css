@@ -1,0 +1,169 @@
+/* style.css */
+
+/* ─── Variables ─────────────────────────────── */
+:root {
+    --box-light-hover: #f7f7f7;
+    --box-light-border: #eee;
+    --color-main: #0e0e0e;
+    --color-disabled: #aaa;
+    --color-accent: #0074d3;
+    --color-range: #cce6ff;
+}
+
+/* ─── Picker Buttons ───────────────────────── */
+.picker-button {
+	display: inline-block;
+	border-radius: 7px;
+	padding: 10px 15px;
+	background-color: var(--box-light-hover);
+	color: var(--color-main);
+	width: 140px;
+}
+.picker-button:hover {
+	cursor: pointer;
+}
+.picker-button span {
+	color: var(--color-main);
+}
+
+/* ─── Backdrop ─────────────────────────────── */
+.picker-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 900;
+}
+
+/* ─── Date & Time Pickers ───────────────────── */
+.date-picker,
+.time-picker {
+	display: none;
+	position: absolute;
+	background-color: var(--box-light-hover);
+	border: 1px solid var(--box-light-border);
+	border-radius: 5px;
+	box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+}
+
+.date-picker {
+	width: 270px;
+	min-height: 280px;
+}
+
+.date-picker-header {
+	position: sticky;
+	border-bottom: 1px solid var(--box-light-border);
+}
+
+.date-picker .days-of-week {
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 10px;
+	height: 40px;
+}
+.date-picker .days-of-week span {
+	text-align: center;
+	width: 32px;
+	line-height: 32px;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.date-picker-months {
+	overflow-y: scroll;
+	max-height: 280px;
+	padding-bottom: 0;
+	font-size: 14px;
+}
+
+.date-picker-month-container {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10px;
+	gap: 2px;
+	width: 100%;
+}
+.date-picker-month {
+	width: 100%;
+	font-weight: 500;
+	color: #999;
+	margin-left: 5px;
+}
+
+.date-picker-date {
+	display: inline-block;
+	text-align: center;
+	flex-basis: 13.5962%;
+	line-height: 34px;
+	height: 34px;
+	border-radius: 50%;
+	color: #555;
+	transition: 0.2s ease-in-out;
+}
+.date-picker-date:hover {
+	background-color: #bbb;
+	cursor: pointer;
+}
+.date-picker-date.date-disabled {
+	color: #ddd;
+	pointer-events: none;
+}
+.date-picker-date.today-outline {
+	border: 2px solid #bbb;
+	line-height: 30px;
+}
+.date-picker-date.active-date.today-outline {
+	border: none;
+	line-height: 34px;
+}
+.date-picker .active-date {
+	background-color: var(--color-accent);
+	color: var(--box-light-border);
+}
+
+/* Ranges */
+.date-picker-date.in-range {
+	background-color: var(--color-range);
+	border-radius: 0;
+}
+.date-picker-date.range-start {
+	background-color: var(--color-accent);
+	color: white;
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+}
+.date-picker-date.range-end {
+	background-color: var(--color-accent);
+	color: white;
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+
+/* ─── Time Picker ───────────────────────────── */
+.time-picker {
+	overflow-y: scroll;
+	width: 125px;
+	height: 250px;
+	left: 152px;
+}
+
+.time-picker .time-element {
+	display: block;
+	text-align: right;
+	width: 100%;
+	padding: 5px 18px;
+}
+.time-picker .time-element:hover {
+	background-color: #eee;
+	cursor: pointer;
+}
+.time-picker .time-element.active-time {
+	background-color: #eee;
+	font-weight: 500;
+}
+.time-picker .time-element.inactive-time {
+	color: var(--color-disabled);
+	pointer-events: none;
+}
